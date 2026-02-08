@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roberta | Terapia Integrativa</title>
+
+  <!-- Fontes do Google (usei Montserrat para texto e Playfair para títulos) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- EmailJS: biblioteca para enviar o formulário por e-mail (sem backend) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Header fixo com logo + navegação -->
+  <header>
+    <div class="menu-container">
+      <div class="logo" aria-label="Identidade do site">
+        <span class="logo-name">Roberta</span>
+        <span class="logo-sub">Terapia Integrativa</span>
+      </div>
+
+      <!-- Botão do menu no mobile -->
+      <div class="menu-toggle" id="menuToggle" aria-label="Abrir menu" role="button" tabindex="0">☰</div>
+
+      <nav id="menuNav" aria-label="Navegação principal">
+        <a href="#sec1">Início</a>
+        <a href="#sec2">A Terapia</a>
+        <a href="#sec3">Contato</a>
+        <a href="#sec4">Atendimento</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Seção 1: Hero -->
+  <section id="sec1" class="sec1">
+    <div class="hero-panel">
+      <div class="hero-kicker" aria-label="Palavras-chave do atendimento">
+        <span class="dot"></span> acolhimento
+        <span class="dot"></span> equilíbrio
+        <span class="dot"></span> bem-estar
+      </div>
+
+      <h1>Um espaço de escuta, cuidado e reconexão</h1>
+      <p>Aqui você encontra apoio para organizar sentimentos, reencontrar equilíbrio e seguir com mais confiança.</p>
+    </div>
+  </section>
+
+  <!-- Seção 2: Sobre -->
+  <section id="sec2" class="sec2">
+    <h2>Sobre a terapia</h2>
+    <p>
+      O atendimento é voltado principalmente ao cuidado emocional e energético, oferecendo um espaço de escuta,
+      acolhimento e orientação para quem busca aliviar estresse, ansiedade e sobrecargas do dia a dia.
+      Através de uma abordagem integrativa, cada sessão é personalizada, ajudando você a organizar pensamentos,
+      fortalecer o autoconhecimento e desenvolver mais equilíbrio emocional.
+    </p>
+
+    <h3 class="sec-subtitle">Benefícios</h3>
+    <ul class="beneficios">
+      <li>Apoio emocional e energético</li>
+      <li>Redução do estresse e da ansiedade</li>
+      <li>Mais clareza mental</li>
+      <li>Relaxamento e bem-estar</li>
+      <li>Melhora do sono e da concentração</li>
+      <li>Suporte em momentos difíceis ou de transição</li>
+    </ul>
+  </section>
+
+  <!-- Seção 3: Contato -->
+  <section id="sec3" class="sec3">
+    <h2>Contato</h2>
+    <p class="sec-desc">
+      Envie sua mensagem e me conte brevemente o que você está buscando.
+    </p>
+
+    <!-- Form simples (o envio é feito pelo EmailJS no script.js) -->
+    <div class="form-container">
+      <input type="text" id="nome" placeholder="Seu nome" autocomplete="name" />
+      <input type="email" id="email" placeholder="Seu e-mail" autocomplete="email" />
+      <input type="tel" id="telefone" placeholder="Seu telefone" autocomplete="tel" />
+      <textarea id="mensagem" placeholder="Sua mensagem"></textarea>
+
+      <button class="btn-agendar" id="enviarWhatsApp" type="button">
+        Enviar Mensagem
+      </button>
+    </div>
+  </section>
+
+  <!-- Seção 4: CTA -->
+  <section id="sec4" class="sec4">
+    <h2>Seu bem-estar começa aqui</h2>
+    <p>Reserve um momento para você e inicie um caminho de cuidado, escuta e equilíbrio emocional.</p>
+
+    <button class="btn-agendar" id="openTermos" type="button">
+      Agendar Atendimento
+    </button>
+  </section>
+
+  <!-- Modal: termo + tipo de sessão -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close-modal" id="closeModal" type="button" aria-label="Fechar modal">✕</button>
+
+      <h3 id="modalTitle">Termo de Atendimento</h3>
+      <p>
+        O atendimento em Terapia Integrativa tem caráter complementar e de bem-estar,
+        não substituindo acompanhamento médico, psicológico, psiquiátrico, jurídico
+        ou financeiro. Em caso de sintomas intensos, procure um profissional habilitado.
+      </p>
+
+      <label for="tipoConsulta">Selecione o tipo de sessão:</label>
+      <select id="tipoConsulta">
+        <option value="30min">Sessão 30min - R$25</option>
+        <option value="60min">Sessão 60 min - R$50</option>
+      </select>
+
+      <div class="termos-check">
+        <input type="checkbox" id="aceiteTermos" />
+        <label for="aceiteTermos">Li e aceito o termo de atendimento</label>
+      </div>
+
+      <button class="btn-agendar" id="btnProsseguir" disabled type="button">
+        Prosseguir para o WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-brand">Roberta • Terapia Integrativa</p>
+      <p class="footer-copy">© 2026 • Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <!-- JS principal (defer para garantir que o DOM já existe) -->
+  <script defer src="script.js"></script>
+</body>
+</html>
