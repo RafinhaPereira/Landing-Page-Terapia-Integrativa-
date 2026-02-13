@@ -1,6 +1,8 @@
 
 # Roberta | Terapia Integrativa
 
+[Acesse o Site aqui](https://melodic-dango-726ed4.netlify.app)
+
 Landing page institucional de Terapia Integrativa, criada para apresentar o serviço e direcionar o visitante para contato e agendamento.
 
 O objetivo do projeto foi desenvolver uma página leve, acolhedora e funcional, focada em conversão, utilizando apenas HTML, CSS e JavaScript puro.
