@@ -1,7 +1,7 @@
 
 # Roberta | Terapia Integrativa
 
-[Acesse o Site aqui](https://melodic-dango-726ed4.netlify.app)
+[Acesse o Site aqui](https://bejewelled-hotteok-ec2491.netlify.app)
 
 Landing page institucional de Terapia Integrativa, criada para apresentar o serviço e direcionar o visitante para contato e agendamento.
 
